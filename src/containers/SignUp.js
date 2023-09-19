@@ -201,6 +201,7 @@ function SignUp() {
 
     return (
         <MDBContainer fluid>
+            <h1 style={{ color: 'brown', fontFamily: 'serif', fontSize: '55px', textShadow: '5px 5px 15px brown', textAlign: 'center' }} >Welcome To Burger Builder</h1>
             <MDBCard className='text-black m-5' style={{ borderRadius: '25px' }}>
                 <MDBCardBody>
                     <MDBRow>

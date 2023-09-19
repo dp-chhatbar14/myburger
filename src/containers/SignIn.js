@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Burger from '../components/Burger/Burger';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 import {
     MDBBtn,
     MDBContainer,
@@ -40,6 +41,8 @@ function SignIn() {
                     setState({ ...state, userExist: true });
                 }
                 else {
+                    Cookies.set('email', state.email);
+                    Cookies.set('name', response.data.name);
                     setState({ ...state, signedIn: true });
                 }
             })
@@ -69,11 +72,12 @@ function SignIn() {
 
     return (
         <MDBContainer fluid>
+            <h1 style={{ color: 'brown', fontFamily: 'serif', fontSize: '55px', textShadow: '5px 5px 15px brown', textAlign: 'center' }} >Welcome To Burger Builder</h1>
             <MDBCard className='text-black m-5' style={{ borderRadius: '25px' }}>
                 <MDBCardBody>
                     <MDBRow>
                         <MDBCol md='10' lg='6' className='order-2 order-lg-1 d-flex flex-column align-items-center'>
-                            <p classNAme="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                            <p classNAme="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign In</p>
                             {state.userExist && <p className='m-3 h6 text-danger'>Invalid Email or Password</p>}
 
                             <div className="d-flex flex-row align-items-center mt-4">
