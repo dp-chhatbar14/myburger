@@ -7,7 +7,7 @@ exports.getUser = async (req, res) => {
             res.status(201).json({ message: 'User does not exists' });
         }
         else {
-            res.status(200).json({ message: 'User is Registered' });
+            res.status(200).json({ name: result[0].username });
         }
     } catch (err) {
         res.status(404).json({
