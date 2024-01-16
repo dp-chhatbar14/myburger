@@ -1,15 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import Burger from '../components/Burger/Burger';
 import axios from 'axios';
 import {
-    MDBBtn,
-    MDBContainer,
-    MDBRow,
-    MDBCol,
-    MDBCard,
-    MDBCardBody,
     MDBInput,
     MDBIcon,
     MDBCardLink,
@@ -200,29 +193,14 @@ function SignUp() {
     }
 
     return (
-        <MDBContainer fluid>
-            <h1 style={{ color: 'brown', fontFamily: 'serif', fontSize: '55px', textShadow: '5px 5px 15px brown', textAlign: 'center' }} >Welcome To Burger Builder</h1>
-            <MDBCard className='text-black m-5' style={{ borderRadius: '25px' }}>
-                <MDBCardBody>
-                    <MDBRow>
-                        <MDBCol md='10' lg='6' className='order-2 order-lg-1 d-flex flex-column align-items-center'>
-                            <p classNAme="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+        <>
+        <p classNAme="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
                             {state.isUserExist && <p className='m-3 h6 text-danger'>Email you entered is already Registered</p>}
                             {elementsArray}
                             <div className='mb-4 d-flex align-items-center'>
                                 <p className='m-2'>Already a User?</p>
-                                <MDBCardLink className='m-0' onClick={() => { history.push('/') }} >SignIn</MDBCardLink>
-                            </div>
-                            <MDBBtn disabled={!state.formIsValid} onClick={(event) => signUpHandler(event)} className='mb-4' size='lg'>Register</MDBBtn>
-                        </MDBCol>
-                        <MDBCol md='10' lg='6' className='order-1 order-lg-2 d-flex mt-4 align-items-center'>
-                            <Burger ingredients={{ "bacon": 1, "cheese": 1, "meat": 1, "salad": 1 }} />
-                        </MDBCol>
-                    </MDBRow>
-                </MDBCardBody>
-            </MDBCard>
-
-        </MDBContainer>
+                                <MDBCardLink className='m-0' style={{cursor:"pointer"}} onClick={() => { history.push('/') }} >SignIn</MDBCardLink>
+                            </div></>
     );
 }
 

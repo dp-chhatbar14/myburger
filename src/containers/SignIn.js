@@ -71,13 +71,8 @@ function SignIn() {
     }
 
     return (
-        <MDBContainer fluid>
-            <h1 style={{ color: 'brown', fontFamily: 'serif', fontSize: '55px', textShadow: '5px 5px 15px brown', textAlign: 'center' }} >Welcome To Burger Builder</h1>
-            <MDBCard className='text-black m-5' style={{ borderRadius: '25px' }}>
-                <MDBCardBody>
-                    <MDBRow>
-                        <MDBCol md='10' lg='6' className='order-2 order-lg-1 d-flex flex-column align-items-center'>
-                            <p classNAme="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign In</p>
+       <>
+        <p classNAme="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign In</p>
                             {state.userExist && <p className='m-3 h6 text-danger'>Invalid Email or Password</p>}
 
                             <div className="d-flex flex-row align-items-center mt-4">
@@ -104,18 +99,9 @@ function SignIn() {
 
                             <div className='mb-4 d-flex align-items-center'>
                                 <p className='m-2'>Not a User?</p>
-                                <MDBCardLink className='m-0' onClick={() => { history.push('/signup') }} >SignUp</MDBCardLink>
+                                <MDBCardLink className='m-0' style={{cursor:"pointer"}} onClick={() => { history.push('/signup') }} >SignUp</MDBCardLink>
                             </div>
-                            <MDBBtn onClick={(event) => signInHandler(event)} className='mb-4' size='lg'>Sign In</MDBBtn>
-                        </MDBCol>
-                        <MDBCol md='10' lg='6' className='order-1 order-lg-2 d-flex mt-4 align-items-center'>
-                            <Burger ingredients={{ "bacon": 1, "cheese": 1, "meat": 1, "salad": 1 }} />
-                        </MDBCol>
-                    </MDBRow>
-                </MDBCardBody>
-            </MDBCard>
-
-        </MDBContainer>
+       </>
     );
 }
 

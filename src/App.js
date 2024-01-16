@@ -8,6 +8,7 @@ import {BrowserRouter,Switch,Route} from 'react-router-dom';
 import Orders from './containers/Orders/Orders';
 
 import './App.css';
+import WelcomePage from './containers/FirstPage/WelcomePage';
 
 class App extends Component {
   render(){
@@ -16,8 +17,8 @@ class App extends Component {
         <BrowserRouter>
           <Layout>
             <Switch>
-              <Route path='/' exact component={SignIn}/>
-              <Route path='/signup' exact component={SignUp}/>  
+              <Route path='/' exact component={WelcomePage}/>
+              <Route path='/signup' exact component={WelcomePage}/>  
               <Route path='/builder' exact component={BurgerBuilder}/>
               <Route path='/orders' exact component={Orders}/>
               <Route path='/checkout' component={Checkout}/>
